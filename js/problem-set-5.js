@@ -201,6 +201,39 @@ function hurricane() {
   let windspeed; // DO NOT MODIFY
   ///////////////// DO NOT MODIFY
 
+  let p=document.getElementById("hurricane-output");
+  windspeed=prompt("Enter an Integer Between 1 and Infinite");
+
+  while(windspeed<1){
+    windspeed=prompt("Enter an Integer Between 1 and Inifite");
+  }
+
+  let type=parseInt(windspeed, 10);
+
+  if (windspeed>0 && windspeed<39){
+    p.innerHTML="The skies are calm...";
+  }
+  else if (windspeed>38 && windspeed<74){
+    p.innerHTML="Tropical Storm.";
+  }
+  else if (windspeed>73 && windspeed<96){
+    p.innerHTML="Category 1 Hurricane."
+  }
+  else if (windspeed>95 && windspeed<111){
+    p.innerHTML="Category 2 Hurricane."
+  }
+  else if (windspeed>110 && windspeed<130){
+    p.innerHTML="Category 3 Hurricane."
+  }
+  else if (windspeed>129 && windspeed<157){
+    p.innerHTML="Category 4 Hurricane."
+  }
+  else if (windspeed>156){
+    p.innerHTML="Category 5 Hurricane."
+  }
+
+  windspeed=type;
+
   ///////////////////////////////// DO NOT MODIFY
   check('hurricane', windspeed); // DO NOT MODIFY
   ///////////////////////////////// DO NOT MODIFY
@@ -243,6 +276,31 @@ function gymnastics() {
    *       scores.push(firstScore);   // your variable names for your scores
    *       scores.push(secondScore);  // will likely be different than mine
    */
+
+   let firstScore=prompt("A Real Number Between 0.0 and 10.0")
+   while (firstScore<0 || firstScore>10){
+     firstScore=prompt("A Real Number Between 0.0 and 10.0")
+   }
+   let secondScore=prompt("A Real Number Between 0.0 and 10.0")
+   while (secondScore<0 || secondScore>10){
+     secondScore=prompt("A Real Number Between 0.0 and 10.0")
+   }
+   let thirdScore=prompt("A Real Number Between 0.0 and 10.0")
+   while (thirdScore<0 || thirdScore>10){
+     thirdScore=prompt("A Real Number Between 0.0 and 10.0")
+   }
+   let fourthScore=prompt("A Real Number Between 0.0 and 10.0")
+   while (fourthScore<0 || fourthScore>10){
+     fourthScore=prompt("A Real Number Between 0.0 and 10.0")
+   }
+   let fifthScore=prompt("A Real Number Between 0.0 and 10.0")
+   while (fifthScore<0 || fifthScore>10){
+     fifthScore=prompt("A Real Number Between 0.0 and 10.0")
+   }
+   let sixthScore=prompt("A Real Number Between 0.0 and 10.0")
+   while (sixthScore<0 || sixthScore>10){
+     sixthScore=prompt("A Real Number Between 0.0 and 10.0")
+   }
 
   /////////////////////////////// DO NOT MODIFY
   check('gymnastics', scores); // DO NOT MODIFY
