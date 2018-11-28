@@ -277,30 +277,60 @@ function gymnastics() {
    *       scores.push(secondScore);  // will likely be different than mine
    */
 
+   let p=document.getElementById("gymnastics-output")
+
    let firstScore=prompt("A Real Number Between 0.0 and 10.0")
    while (firstScore<0 || firstScore>10){
      firstScore=prompt("A Real Number Between 0.0 and 10.0")
    }
+   firstScore=parseInt(firstScore, 10);
+
    let secondScore=prompt("A Real Number Between 0.0 and 10.0")
    while (secondScore<0 || secondScore>10){
      secondScore=prompt("A Real Number Between 0.0 and 10.0")
    }
+   secondScore=parseInt(secondScore, 10);
+
    let thirdScore=prompt("A Real Number Between 0.0 and 10.0")
    while (thirdScore<0 || thirdScore>10){
      thirdScore=prompt("A Real Number Between 0.0 and 10.0")
    }
+   thirdScore=parseInt(thirdScore, 10);
+
    let fourthScore=prompt("A Real Number Between 0.0 and 10.0")
    while (fourthScore<0 || fourthScore>10){
      fourthScore=prompt("A Real Number Between 0.0 and 10.0")
    }
+   fourthScore=parseInt(fourthScore, 10);
+
    let fifthScore=prompt("A Real Number Between 0.0 and 10.0")
    while (fifthScore<0 || fifthScore>10){
      fifthScore=prompt("A Real Number Between 0.0 and 10.0")
    }
+   fifthScore=parseInt(fifthScore, 10);
+
    let sixthScore=prompt("A Real Number Between 0.0 and 10.0")
    while (sixthScore<0 || sixthScore>10){
      sixthScore=prompt("A Real Number Between 0.0 and 10.0")
    }
+   sixthScore=parseInt(sixthScore, 10);
+
+   scores.push(firstScore);
+   scores.push(secondScore);
+   scores.push(thirdScore);
+   scores.push(fourthScore);
+   scores.push(fifthScore);
+   scores.push(sixthScore);
+
+   total=(firstScore + secondScore + thirdScore + fourthScore + fifthScore + sixthScore);
+   let minScore=Math.min(firstScore, secondScore, thirdScore, fourthScore, fifthScore, sixthScore);
+   let maxScore=Math.max(firstScore, secondScore, thirdScore, fourthScore, fifthScore, sixthScore);
+
+   average =(total-(minScore+maxScore)) / 4;
+   average = average.toFixed(2);
+   discarded = `${minScore}, ${maxScore}`;
+
+   p.innerHTML = `Discarded: ${discarded}<br/>Score: ${average}`;
 
   /////////////////////////////// DO NOT MODIFY
   check('gymnastics', scores); // DO NOT MODIFY
