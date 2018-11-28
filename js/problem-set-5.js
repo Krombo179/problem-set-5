@@ -26,18 +26,15 @@ function mario() {
   let height; // DO NOT MODIFY
   ////////////// DO NOT MODIFY
 
+  let spaces;
+
   height=prompt("Enter an Integer Between 1 and 23");
   while(height>23 || height<1){
     height=prompt("Enter an Integer Between 1 and 23");
   }
-  if(height===1){
-    p=document.getElementById("mario-easy-output");
-    p.innerHTML="#";
+  for(let i=height; i<24; i++){
+    for(let k=height; )
   }
-  if(height===2){
-    p=document.getElementById("mario-easy-output");
-    p.innerHTML="#";
-}
 
   ////////////////////////// DO NOT MODIFY
   check('mario', height); // DO NOT MODIFY
@@ -377,6 +374,8 @@ function reportCard() {
   let quizzes = 0; //// DO NOT MODIFY
   let homeworks = 0; // DO NOT MODIFY
   ///////////////////// DO NOT MODIFY
+
+  
 
   /*
    * NOTE: The 'tests', 'quizzes', and 'homeworks' variables should be
