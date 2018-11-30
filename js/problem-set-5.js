@@ -371,7 +371,6 @@ function reportCard() {
   quizzes = -1;
   homeworks = -1;
 
-
   let testExtra
   for (testExtra = 0; testExtra != -1; testTotal = testTotal + testExtra) {
     testExtra = prompt(`Enter test grades between 0.0 and 100.0 when finshed enter "-1"`)
@@ -398,7 +397,6 @@ function reportCard() {
     }
   }
 
-
   let homeworkExtra
   for (homeworkExtra = 0; homeworkExtra != -1; homeworkTotal = homeworkTotal + homeworkExtra) {
     homeworkExtra = prompt(`Enter homework grades between 0.0 and 100.0 when finshed enter "-1"`)
@@ -412,7 +410,6 @@ function reportCard() {
     }
   }
 
-
   let testAverage = testTotal / tests
   let quizAverage = quizTotal / quizzes
   let homeworkAverage = homeworkTotal / homeworks
@@ -423,7 +420,6 @@ function reportCard() {
   grade = grade.toFixed(2);
   let p =document.getElementById("report-card-output");
   p.innerHTML =`Tests: ${testAverage}<br/>Quizzes: ${quizAverage}<br/>Homework: ${homeworkAverage}<br/>Grade: ${grade}`;
-
 
   /*
    * NOTE: The 'tests', 'quizzes', and 'homeworks' variables should be
