@@ -26,15 +26,7 @@ function mario() {
   let height; // DO NOT MODIFY
   ////////////// DO NOT MODIFY
 
-  let spaces;
 
-  height=prompt("Enter an Integer Between 1 and 23");
-  while(height>23 || height<1){
-    height=prompt("Enter an Integer Between 1 and 23");
-  }
-  for(let i=height; i<24; i++){
-    for(let k=height; )
-  }
 
   ////////////////////////// DO NOT MODIFY
   check('mario', height); // DO NOT MODIFY
@@ -375,7 +367,63 @@ function reportCard() {
   let homeworks = 0; // DO NOT MODIFY
   ///////////////////// DO NOT MODIFY
 
-  
+  tests = -1;
+  quizzes = -1;
+  homeworks = -1;
+
+
+  let testExtra
+  for (testExtra = 0; testExtra != -1; testTotal = testTotal + testExtra) {
+    testExtra = prompt(`Enter test grades between 0.0 and 100.0 when finshed enter "-1"`)
+    while (testExtra < 0 && testExtra != -1 || testExtra > 100.0){
+      testExtra = prompt(`Enter test grades between 0.0 and 100.0 when finished enter "-1"`)
+    }
+    testExtra = parseInt(testExtra, 10);
+      tests = tests + 1
+    if (testExtra === -1) {
+     testTotal++
+    }
+  }
+
+  let quizExtra
+  for (quizExtra = 0; quizExtra != -1; quizTotal = quizTotal + quizExtra) {
+    quizExtra = prompt(`Enter quiz grades between 0.0 and 100.0 when finshed enter "-1"`)
+    while (quizExtra < 0 && quizExtra != -1 || quizExtra > 100.0){
+      quizExtra = prompt(`Enter quiz grades between 0.0 and 100.0 when finshed enter "-1"`)
+    }
+    quizExtra = parseInt(quizExtra, 10);
+      quizzes = quizzes + 1
+    if (quizExtra === -1) {
+      quizTotal++
+    }
+  }
+
+
+  let homeworkExtra
+  for (homeworkExtra = 0; homeworkExtra != -1; homeworkTotal = homeworkTotal + homeworkExtra) {
+    homeworkExtra = prompt(`Enter homework grades between 0.0 and 100.0 when finshed enter "-1"`)
+    while (homeworkExtra < 0 && homeworkExtra != -1 || homeworkExtra > 100.0){
+      homeworkExtra = prompt(`Enter test grades between 0.0 and 100.0 when finshed enter "-1"`)
+    }
+    homeworkExtra = parseInt(homeworkExtra, 10);
+      homeworks = homeworks + 1
+    if (homeworkExtra === -1) {
+      homeworkTotal++
+    }
+  }
+
+
+  let testAverage = testTotal / tests
+  let quizAverage = quizTotal / quizzes
+  let homeworkAverage = homeworkTotal / homeworks
+  testAverage = testAverage.toFixed(2);
+  quizAverage = quizAverage.toFixed(2);
+  homeworkAverage = homeworkAverage.toFixed(2);
+  let grade = (testAverage * 0.6) + (quizAverage * 0.3) + (homeworkAverage * 0.1)
+  grade = grade.toFixed(2);
+  let p =document.getElementById("report-card-output");
+  p.innerHTML =`Tests: ${testAverage}<br/>Quizzes: ${quizAverage}<br/>Homework: ${homeworkAverage}<br/>Grade: ${grade}`;
+
 
   /*
    * NOTE: The 'tests', 'quizzes', and 'homeworks' variables should be
