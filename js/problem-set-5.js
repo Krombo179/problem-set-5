@@ -20,13 +20,36 @@
  * All output should be displayed on the page, not printed to the console.
  */
 
-function mario() {
+  function mario() {
 
   ////////////// DO NOT MODIFY
   let height; // DO NOT MODIFY
   ////////////// DO NOT MODIFY
 
+  while (true){
+    height=prompt("Please enter a integer between 1 and 23");
+    height=Number(height);
+    if(height>=1 && height<=23 && Number.isInteger(height)){
+      break;
+    }
+  }
+  let i=1;
+  let hashmarks='#';
+  let lines="<code>";
+  let breaks=height-2;
 
+  while (i<=height){
+    let a='';
+    for(let j=0;j<=breaks;j++) {
+      a+='&nbsp;';
+    }
+    breaks--;
+    hashmarks=hashmarks+'#';
+    lines=lines+a+hashmarks+"</br>";
+    i++;
+  }
+  document.getElementById("mario-easy-output").innerHTML=lines;
+  lines=lines+"</code>"
 
   ////////////////////////// DO NOT MODIFY
   check('mario', height); // DO NOT MODIFY
@@ -61,7 +84,30 @@ function marioAgain() {
   let height; // DO NOT MODIFY
   ////////////// DO NOT MODIFY
 
-  // WRITE YOUR EXERCISE 2 CODE HERE
+  while (true){
+  height=prompt("Please enter an integer between 1 and 23");
+  height=Number(height);
+  if(height>=1 && height<=23 && Number.isInteger(height)){
+    break;
+    }
+  }
+  let i=1;
+  let hashmarks='#';
+  let lines="<code>";
+  let breaksBefore=height-2;
+  let breaksAfter='&nbsp'+'&nbsp';
+  while (i<=height){
+  let a='';
+  for(let j=0;j<=breaksBefore;j++) {
+    a+='&nbsp;';
+  }
+    breaksBefore--;
+    hashmarks=hashmarks+'#';
+    lines=lines+a+hashmarks+breaksAfter+hashmarks+"</br>";
+    i++;
+  }
+  document.getElementById("mario-hard-output").innerHTML=lines;
+  lines=lines+"</code>"
 
   //////////////////////////////// DO NOT MODIFY
   check('mario-again', height); // DO NOT MODIFY
@@ -114,7 +160,7 @@ function credit() {
   let card; // DO NOT MODIFY
   //////////// DO NOT MODIFY
 
-  // WRITE YOUR EXERCISE 3 CODE HERE
+
 
   /*
    * NOTE: After reading in the card number and storing it in the 'card'
