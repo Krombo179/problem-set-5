@@ -155,19 +155,21 @@ function guess() {
 
   let p=document.getElementById("guess-output")
   let randomNumber=Math.floor(Math.random() * 1000) + 1;
-  let guessAmount=0
+  let guessAmount=1
   let guess=prompt("Guess a Real Number Between 1 and 1,000")
 
   while(guess>=0 && guess<=1000 && guess!=randomNumber){
     guessAmount++
       if(guess<randomNumber){
-        hint="Guess a Higher Number"
+        guess=prompt("Guess a Higher Number")
       }
       else{
-        hint="Guess a Lower Number"
+        guess=prompt("Guess a Lower Number")
       }
-    p.innerHTML = `hint`
-    guess=prompt("Guess a Real Number Between 1 and 1,000")
+  }
+
+  if(guess=randomNumber){
+    p.innerHTML=`Correct Number: ${randomNumber} <br/> Number of Guesses: ${guessAmount}`
   }
 
   ////////////////// DO NOT MODIFY
