@@ -160,7 +160,56 @@ function credit() {
   let card; // DO NOT MODIFY
   //////////// DO NOT MODIFY
 
+  let sumOne = 0;
+  let sumTwo = 0;
+  while (true){
+  card = prompt("Enter your credit card number with no spaces, dashes, etc.");
 
+  if (Number.isInteger(Number(card))){
+    break;
+    }
+
+  if(card === null){
+    break;
+    }
+  }
+
+  if (card !== null) {
+  for(let i = card.length-2; i >= 0; i-=2) {
+  let num = Number(card[i]) * 2;
+  let numString = num.toString();
+  let numSum = 0;
+  for (let j = 0 ; j < numString.length; j++){
+      numSum = numSum + Number(numString[j]);
+    }
+    sumOne = numSum + sumOne;
+    console.log(sumOne);
+  }
+
+  for(let k = card.length-1; k >= 0;k-=2){
+    sumTwo = sumTwo + Number(card[k])
+  }
+
+  console.log(sumTwo);
+
+  if (card.length == 15 && (card[0] == 3 &&(card[1] == 7 || card[1] == 4)) && (sumOne + sumTwo)% 10 == 0){
+    document.getElementById("credit-output").innerHTML="<img src ='./images/amex.png'/>";
+  }
+  else if ((card.length == 13 || card.length == 16) && card[0] == 4 && (sumOne + sumTwo) % 10 == 0){
+    document.getElementById("credit-output").innerHTML="<img src ='./images/visa.png'/>";
+  }
+  else if (card.length == 16 && (card[0] == 5 && (card[1] == 1 || card[1] == 2 || card[1] == 4 || card[1] == 5)) && (sumOne + sumTwo) % 10 == 0){
+    document.getElementById("credit-output").innerHTML="<img src ='./images/mastercard.png'/>";
+  }
+  else {
+    document.getElementById("credit-output").innerHTML="<img src ='./images/invalid.png'/>";
+  }
+
+  card=Number(card);
+  }
+  else {
+  document.getElementById("credit-output").innerHTML = "";
+  }
 
   /*
    * NOTE: After reading in the card number and storing it in the 'card'
